@@ -1,0 +1,42 @@
+package com.directory;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class DirectoryDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		HashMap<String, Integer> myMap = new HashMap<String, Integer>();
+		String name = null;
+		Integer phoneNumber = 0;
+
+		Scanner keyboard = new Scanner(System.in);
+		Integer n = keyboard.nextInt();
+
+		keyboard.nextLine();
+		for (int i = 0; i < n; i++) {
+			name = keyboard.nextLine();
+			phoneNumber = keyboard.nextInt();
+			keyboard.nextLine();
+			myMap.put(name, phoneNumber);
+
+		}
+
+		while (keyboard.hasNext()) {
+			String temp = keyboard.nextLine();
+			if (myMap.containsKey(temp)) {
+				System.out.println(temp + "=" + myMap.get(temp));
+
+			} else {
+				System.out.println("Not found");
+			}
+		}
+		
+		keyboard.close();
+// testing
+	}
+
+}
